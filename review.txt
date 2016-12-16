@@ -1,0 +1,54 @@
+Command Line:
+What is a shell? What is "bash?"
+A shell is a command line that can operate on a language that is not inherit to the installed command prompt. A bash is the means to how the shell converts the language to a language that the system understands.
+
+In your own words, write what each of the following commands does:
+pwd: displays the directory
+ls: displays a list of files in the current folder
+mv: moves a file from on folder to another
+cd: changes the directory
+touch: creates files
+mkdir: creates folders
+rm: deletes files or folders
+help: displays the commands and descriptions
+find: displays the location of a file
+grep: displays the position of the inquired text
+
+Git
+
+What is version control and why do developers use it?
+Verison control saves previous states and allows for developers to roll back. 
+
+What is a commit? What are the best practices for commit messages?
+A commit saves a modified verison of a file. A good message describes the changes to the file.
+
+What is a branch?
+A branch is a state that can diverge from the master, but still has the option to merge.
+
+What are the 3 stages of a git change and how do you move a file from one stage to the other?
+1) a file has been modified
+2) the file is added
+3) the file is committed
+
+GitHub:
+Write an explanation of and compare Git and GitHub to one another.
+Git is a tool that creates multiple verisons of a code, and github is where this code is stored and can be accessed by multiple users.
+
+In your own words, write instructions to create, clone and update a repository.
+git init will convert the folder to a repo.
+git clone will copy a repo.
+git add and then git commit will update a repo.
+
+In your own words, write instructions to fork, clone and update a repository.
+On the github page, clicking the fork tab will create a copy of the master code that is seperate from the intial master code.
+git clone and the url from the forked page will copy a stored repo from github onto your local device.
+git push origin "Branch Name" will upload changes you made to a file already on github 
+
+What is a pull request and how do you create and merge one?
+A pull request is when a file from local is updated to the corresponding file on github. The merge is complete once the master is overwritten during the pull confirmation.
+
+Why are pull requests preferred when working with teams?
+It allows the reonciliation of merge conflicts. 
+
+
+
