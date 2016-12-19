@@ -12,3 +12,11 @@
 .ul{
 	font-size: .8em;
 }
+
+#resume-title:hover{
+	color: blue;
+}
+
+ul li:hover{
+	color: green;
+}
