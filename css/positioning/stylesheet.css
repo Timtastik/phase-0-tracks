@@ -1,3 +1,17 @@
-img {
-	margin: 200px 50%;
+#octopus {
+	margin: 10% 49%;
+	position: absolute;
+	z-index: 0;
+}
+
+#hat {
+	margin: 6% 48%;
+	position: fixed;
+	z-index: 1;
+}
+
+#glasses {
+	margin: 15.75% 51.5%;
+	position: fixed;
+	z-index: 2;
 }
