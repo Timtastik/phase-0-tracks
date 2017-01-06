@@ -1,10 +1,12 @@
 header, footer {
   background-color: orange;
+  display: block;
+  width: 100%;
 }
 
 .column-1 {
   background-color: #FF0000;
-  width: 47%;
+  width: 49%;
   display: inline-block;
   vertical-align: top;
   border: 5px solid;
@@ -15,7 +17,7 @@ header, footer {
 
 .column-2 {
   background-color: #0000FF;
-  width: 47%;
+  width: 49%;
   display: inline-block;
   vertical-align: top;
   border: 5px solid;
