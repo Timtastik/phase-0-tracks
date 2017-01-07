@@ -1,0 +1,35 @@
+Elevator Robot
+- Robot asks what floor you are on
+- Tell the Robot what floor you are on
+- Robot asks what floor you want to go to
+- Tell the Robot what floor you want to go to
+- Robot tells you if you are already on that floor or
+- Robot tells you if that floor is not available
+- Robot confirms it is possible to go to that floor
+- Robot tells you it is possible to go to that floor
+- Robot figures out which button (exact location of button) to press
+- Robot presses the button to the floor you want to go to
+- Elevator proceeds to the floor selected
+- Robot says "WOW ITS WORKING!"
+- Robot tells you, you have arrived to the floor selected!
+- You tell Robot "Good job!"
+
+Crossing the Street
+- Check to see if the street is clear
+	Cross the street
+- Check to see if the street is safe to cross
+	If there is crossing signal white (go)
+		Proceed to Cross
+	If there is stop hand signal (don't go)
+		Wait until safe to cross (go back to see if safe to cross)
+	If there is no signal
+		See if cross traffic is stopped AND allows you to cross
+			Proceed to Cross
+		If cross traffic is moving OR not allowed to cross
+			Go back to see if the street is safe to cross step
+	If there is no way to cross at the road
+		Find a place to cross the street
+			If no place to cross is found
+				Reroute
+- Street is not safe to cross
+	Reroute to find a safe place to cross.
