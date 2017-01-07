@@ -19,11 +19,13 @@ def hamster_form
     until hamster_vol > 0 && hamster_vol < 11
         hamster_vol = gets.chomp.to_i
         # If Input is correct first time then proceed or if incorrect show invalid input
-        if hamster_vol < 0 || hamster_vol > 11
+        if hamster_vol < 0 || hamster_vol >= 11
             puts "Sorry Invalid Input. Try Again."      
         else          
         end
     end
+
+
 
 # Ask user for color of hamster
     puts "What color is your hamster?"
@@ -45,6 +47,8 @@ def hamster_form
 # Relay back information to user
     # Shows blank line before Relaying input back to user
     puts " "
+    # Title for Information Inputted to show user
+    puts "   Information Inputted"
     # Displays Hamster Name as inputted
     puts "Hamster Name: #{hamster_name}"
 
@@ -71,7 +75,7 @@ def hamster_form
             print " and #{hamster_age_months} Month" 
             plural(hamster_age_months)
             puts " "
-            puts " ITS SO OLD!?!?!"        
+            puts " ITS SO OLD!?!?! Hamster max recorded age is 2.5 years!"        
         else
             print "Hamster Age: #{hamster_age_years} Year"
             plural(hamster_age_years)
@@ -83,6 +87,6 @@ end # End of hamster_form method
 # Calls the method
 hamster_form
 
-# Couldve told user invalid input as soon as the user inputs it by using loops
-# Come back to do this later for fun!
-# SIDE NOTE TO SELF
+#SIDE NOTE
+# THERE MUST BE A BETTER WAY TO DO THE BOOLEAN FOR CANDIDATE ?
+# Should add some type of menu for the color of the hamster!
