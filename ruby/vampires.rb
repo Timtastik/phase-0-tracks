@@ -16,20 +16,35 @@ while counter < number_employees
 	print "Would you like to enroll in the company's health insurance? (Y or N) "
 		health_insurance = gets.chomp
 
-	age_calculated = 2017 - year_born
+	puts "  Do you have any allergies?"
+	puts "  Name them one at a time and press enter"
+	puts "  OR when done listing the allergies enter 'done'"
+	allergic = ""
+	while allergic != "done"
+		allergic = gets.chomp
+		puts "Enter another allergy or 'done'"
+		if allergic == "done"
+			age_calculated = 2017 - year_born
 
-	puts " "
+			puts " "
 
-	if (name == "Drake Cula") || (name == "Tu Fang")
-		puts "Definitely a vampire"
-	elsif (age_stated != age_calculated) && (order_garlic_bread == 'N') && (health_insurance == 'N')
-		puts "Almost certainly a vampire"
-	elsif (age_stated != age_calculated) && ((order_garlic_bread == 'N') || (health_insurance == 'N'))
-		puts "Probably a vampire"
-	elsif (age_stated == age_calculated) && ((order_garlic_bread == 'Y') || (health_insurance == 'Y'))
-		puts "Probably not a vampire"
-	else
-		puts "Results inconclusive"
+			if (name == "Drake Cula") || (name == "Tu Fang")
+				puts "Definitely a vampire"
+			elsif (age_stated != age_calculated) && (order_garlic_bread == 'N') && (health_insurance == 'N')
+				puts "Almost certainly a vampire"
+			elsif (age_stated != age_calculated) && ((order_garlic_bread == 'N') || (health_insurance == 'N'))
+				puts "Probably a vampire"
+			elsif (age_stated == age_calculated) && ((order_garlic_bread == 'Y') || (health_insurance == 'Y'))
+				puts "Probably not a vampire"
+			else
+				puts "Results inconclusive"
+			end
+			
+		elsif allergic == "sunshine"
+			puts " "
+			puts "Probably a vampire"
+			break
+		end
 	end
 
 counter += 1
