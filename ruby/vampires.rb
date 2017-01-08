@@ -22,7 +22,6 @@ while counter < number_employees
 	allergic = ""
 	while allergic != "done"
 		allergic = gets.chomp
-		puts "Enter another allergy or 'done'"
 		if allergic == "done"
 			age_calculated = 2017 - year_born
 
@@ -49,3 +48,6 @@ while counter < number_employees
 
 counter += 1
 end
+
+puts " "
+print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
