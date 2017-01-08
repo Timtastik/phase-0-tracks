@@ -3,19 +3,16 @@
 # Change the letters of index to the next letter in alphabet
 # If it is the z then something?
 
-	print "Enter word: "
-	word = gets.chomp
+
 
 def encrypt (word)
 
-	puts length = word.length
-	puts "The word length is #{length}"
+	length = word.length
 
-	counter = 0
 	encryptedresult = ""
 
+	counter = 0
 	while counter < length
-
 		if word[counter] == 'z'
 			encryptedresult += "a"
 		elsif word[counter] == ' '
@@ -25,32 +22,36 @@ def encrypt (word)
 		end
 		counter += 1
 	end
-	puts "#{encryptedresult}"
+	puts encryptedresult
 end
 
-def decrypt (encryptedword)
+def decrypt (encryptedresult)
 
-	length = encryptedword.length
+	length = encryptedresult.length
 
-	counter = 0
+	decryptedword = ""
 
 	abc = "abcdefghijklmnopqrstuvwxyz"
 
+	counter = 0
 	while counter < length
-		while encryptedword[counter] != abc[counter]
-			if encryptedword[counter] == abc[counter]
-				decryptedword += abc[counter-1]
-			else
-			
-			end
-			counter += 1
+		if encryptedresult[counter] == " "
+			decryptedword += " "
+		else 
+			encryptedletter = encryptedresult[counter]
+			index = abc.index(encryptedletter)
+			decryptedword += abc[index - 1]
 		end
-		puts decryptedword
 		counter += 1
 	end
-
+	puts decryptedword
 end
 
-encrypt (word)
 
-decrypt (encrypt(word))
+	encrypt("abc")
+	encrypt("zed")
+	decrypt("bcd")
+	decrypt("afe")
+	encrypt("robin hood")
+	decrypt(encrypt("robin hood"))
+	decrypt(encrypt("swordfish"))
