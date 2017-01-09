@@ -14,6 +14,17 @@
 	# If it is a ' ' then encrypt it as the same ' '
 	# Print the Decrypted word
 
+	# PSEUDO CODE FOR ASKING SECRET AGENT FOR PASSWORD TO DECRYPT OR ENCRYPT
+	# Ask secret agent either to decrypt or encrypt
+	# Take in input variable as a string with the best input as 'D' or 'd' for Decrypt or 'E' or 'e' for Encrypt
+	# Ask secret agent for the password
+	# If Decrypt is wished then call the decrypt method
+		# Print the Decrypted password
+	# If Encrypt is wished then call the encrypt method
+		# Print the Encrypted password
+	# If Invalid input then print Invalid Input to screen
+	# Exit the program
+
 # REVISED PSEUDO CODE AFTER CODING
 
 # Method for Encrypt a word or phrase
