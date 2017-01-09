@@ -71,7 +71,7 @@ def vampires
 	# Adds a count when finished with one survey of an employee
 	counter += 1
 	end # End while counter < number_employees
-
+  
 	# After program finishes all the surveys
 	# This will print a final message before program closes
 	puts " "
