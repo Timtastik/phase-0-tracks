@@ -79,4 +79,3 @@ def vampires
 end # End of Vampire method
 # Calls the vampire method to run
 vampires
-
