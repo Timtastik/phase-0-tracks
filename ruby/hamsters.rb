@@ -17,6 +17,7 @@ def hamster_form
     hamster_vol = 100
 # Keeps asking user for input until meets the asked conditions
     until hamster_vol > 0 && hamster_vol < 11
+        # Overwrites the variable with user input
         hamster_vol = gets.chomp.to_i
         # If Input is correct first time then proceed or if incorrect show invalid input
         if hamster_vol < 0 || hamster_vol >= 11
