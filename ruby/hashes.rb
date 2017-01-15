@@ -43,16 +43,18 @@ print "Extra Cleaning Service(y or n)? "
 service_string = gets.chomp
 # After user input adds a new key and value to the hash
 # Depending on the user input
+	# Keeps asking until valid user input
 	until service_string == 'y' || service_string == 'n'
 		puts "Invalid input. Try again."
 		service_string = gets.chomp
 	end
+	# Evaluates to boolean true or false depending on user input
 	if service_string == 'y'
+		# Input into hash with new key and value of true
 		client_data[:extra_service] = true
-	elsif service_string == 'n'
-		client_data[:extra_service] = false
 	else
-		puts "Invalid Input"
+		# Input into hash with new key and value of false
+		client_data[:extra_service] = false
 	end
 
 # Prints the hash back to the user with inputs
@@ -84,7 +86,13 @@ else
 		if keys[n] == key_update
 			# Asks user for new value for the key
 			puts "What is the new value of key #{key_update}?"
-			client_data[key_update] = gets.chomp
+			# Converts to integer if previous data type is integer
+			if client_data[key_update].is_an_int
+				client_data[key_update] = gets.chomp.to_i
+			else
+				# Otherwise takes input as a string
+				client_data[key_update] = gets.chomp				
+			end
 			# Asks user to input a new label for the key
 			puts "What is the new label for the key?"
 			new_key_name = gets.chomp.to_sym
@@ -102,5 +110,4 @@ end
 
 # SIDE NOTE TO SELF
 # Maybe make a method for last part of coding?
-# Use conditional statements to convert user input value
-# from updated key to convert to suitable type (integer)
+# Use conditional statements to convert user input value for boolean
