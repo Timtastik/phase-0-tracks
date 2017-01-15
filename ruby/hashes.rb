@@ -38,6 +38,23 @@ client_data[:decor_theme] = gets.chomp
 print "Estimated Budget($)? "
 client_data[:budget] = gets.chomp.to_i
 
+# Asks user for boolean data type for Extra Cleaning Service
+print "Extra Cleaning Service(y or n)? "
+service_string = gets.chomp
+# After user input adds a new key and value to the hash
+# Depending on the user input
+	until service_string == 'y' || service_string == 'n'
+		puts "Invalid input. Try again."
+		service_string = gets.chomp
+	end
+	if service_string == 'y'
+		client_data[:extra_service] = true
+	elsif service_string == 'n'
+		client_data[:extra_service] = false
+	else
+		puts "Invalid Input"
+	end
+
 # Prints the hash back to the user with inputs
 puts " "
 p client_data
@@ -55,6 +72,7 @@ if user_input == "none"
 # For any other input assuming it is a correct input
 else
 	# Store all the keys into an array of a variable
+	# Found under the ruby documentation under hash
 	keys = client_data.keys
 	# Convert the user input of a string to symbol
 	key_update = user_input.to_sym
