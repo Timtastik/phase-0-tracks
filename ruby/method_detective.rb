@@ -8,7 +8,7 @@
 # => “InVeStIgAtIoN”
 
  "zom".insert(1, 'o')
-# 	   .insert(2, 'o')
+# 	  .insert(2, 'o')
 # => “zoom”
 
  "enhance".center(14, padstr=' ')
@@ -18,18 +18,19 @@
 # => "STOP! YOU’RE UNDER ARREST!"
 
  "the usual".ljust(18, ' suspects')
-#            .ljust(18,  suspects')
+#           .ljust(18, ' suspects')
 #=> "the usual suspects"
 
  " suspects".prepend("the usual")
-#            .rjust(18, 'the usual')
+#           .rjust(18, 'the usual')
 # => "the usual suspects"
 
  "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
  "The mystery of the missing first letter".slice(1..38)
-# 										   .replace("he mystery of the missing first letter")
+# 										  .replace("he mystery of the missing first letter")
+# 										  .reverse.chop.reverse
 # => "he mystery of the missing first letter"
 
  "Elementary,    my   dear        Watson!".squeeze
@@ -41,9 +42,3 @@
 
  "How many times does the letter 'a' appear in this string?".count "a"
 # => 4
-
-# c o s ? c p l u c i s
-
-# c o s s c p l u c i s
-
-# 4
