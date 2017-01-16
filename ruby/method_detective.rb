@@ -18,7 +18,6 @@ p "Stop! You're under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 p "the usual".ljust(18, ' suspects')
-#
 #=> "the usual suspects"
 
 p " suspects".prepend("the usual")
