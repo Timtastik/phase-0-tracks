@@ -1,8 +1,8 @@
+# Testing out how to run block with method call
 def yo_man
 	puts "YO MAN!"
 	yield
 end
-
 yo_man {puts "WHATS UP!"}
 
 puts " "
@@ -138,3 +138,6 @@ answer_4_hash(number_hash) do
 	number_hash.delete_if{ |english, math| math > 6 }
 end
 
+# SIDENOTE TO SELF
+# PRACTICE HERE MORE DEFINITELY!!!!
+# LEARN TO METHOD AND BLOCK CODE TO BE BETTER BEAUTIFUL CODER!!!!@#!#
