@@ -58,6 +58,7 @@ def fib(number)
 
 end
 
+# Tests Fibonacci code
 p fib(0)
 p fib(1)
 p fib(2)
@@ -68,6 +69,13 @@ if fib(100)[99] == 218922995834555169026
 end
 
 puts " "
+
+# PSEUDO CODE
+# Takes an array full of strings with different lengths
+# Sorts the array by lengths of string from smallest to largest
+# Prints the sorted array back to the user
+# Sorting by one loop will not work checking each element to the succeeding one
+# Must be able to move the smallest string to be the first element
 
 array = ["acab", "coolly", "awesome", "hippopatamus", "timothy", "elizabeth", "to", "a"]
 puts " Prints unsorted array"
@@ -98,3 +106,8 @@ end
 
 puts " Prints sorted array"
 p simple_words_to_complex_words (array)
+
+# SIDENOTE TO SELF
+# Learn how to do looping with .each or .map rather than using while loops
+# Try out insertion sort
+# Do other types of sorting!
