@@ -1,5 +1,7 @@
 class Santa
 
+	attr_reader :age, :ethnicity
+
 	def speak()
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
@@ -45,13 +47,13 @@ class Santa
 		p @reindeer_ranking
 	end
 
-	def age
-		@age		
-	end
+	# def age
+	# 	@age		
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
 end
 
@@ -66,7 +68,7 @@ end
 # 	print "Enter a gender or 'done': "
 # 	input_gender = gets.chomp
 # 	break if input_gender == 'done'
-# 	print "What is the enthnicity?: "
+# 	print "What is the ethnicity?: "
 # 	input_ethnicity = gets.chomp
 # 	santas << Santa.new(input_gender, input_ethnicity)
 # end
@@ -78,3 +80,5 @@ end
 santa_baby = Santa.new("male", "asian")
 santa_baby.get_mad_at("Rudolph")
 santa_baby.show_reindeer
+p santa_baby.age
+p santa_baby.ethnicity
