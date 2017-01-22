@@ -1,5 +1,4 @@
 class Puppy
-
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -20,34 +19,31 @@ class Puppy
 
   def dog_years(human_year)
   	dog_year = human_year / 7
-  	puts dog_year
   end
 
   def jump()
   	puts "*JUMPY*"
   end
 
+  # initialize runs whenever a new instance method has been initialized
   def initialize()
   	puts "Initializing new puppy instance ..."
   end
-
 end
 
 puppy = Puppy.new
 puppy.fetch("ball")
 puppy.speak(3)
 puppy.roll_over
-puppy.dog_years(21)
+p puppy.dog_years(21)
 puppy.jump
 
 
 # PSEUDO CODE
 # Define a class "Dancer"
-
 # Initialize a instance class for Dancer
 
 class Dancer
-
 	def spin()
 		"Dancer spins"
 	end
@@ -55,28 +51,26 @@ class Dancer
 	def flip()
 		"Dancer flips"
 	end
-
 end
 
+# TEST CODE
+# dancer = Dancer.new
 # dancer.flip
 # dancer.spin
 
-def loop_into_data_structure()
+def loop_into_data_structure(number)
 	array_moves = []
 	n = 0
-	while n < 50
+	while n < number
 		array_moves[n] = Dancer.new
 		n += 1
 	end
 	p array_moves
 end
 
-loop_into_data_structure
+# TEST CODE
+# loop_into_data_structure(50)
 
-# array_moves.each do |moves|
-# 	puts "#{moves} with style!"
-# end
-
-loop_into_data_structure.each do |element|
+loop_into_data_structure(50).each do |element|
 	puts "Here I go! #{element.spin} and #{element.flip}"
 end
