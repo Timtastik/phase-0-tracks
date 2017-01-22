@@ -29,7 +29,7 @@ class Puppy
   def initialize()
   	puts "Initializing new puppy instance ..."
   end
-end
+end # class Puppy
 
 puppy = Puppy.new
 puppy.fetch("ball")
@@ -51,17 +51,17 @@ class Dancer
 	def flip()
 		"Dancer flips"
 	end
-end
+end # class Dancer
 
 # TEST CODE
 # dancer = Dancer.new
 # dancer.flip
 # dancer.spin
 
-def loop_into_data_structure(number)
+def loop_into_data_structure(number_of_instances)
 	array_moves = []
 	n = 0
-	while n < number
+	while n < number_of_instances
 		array_moves[n] = Dancer.new
 		n += 1
 	end
