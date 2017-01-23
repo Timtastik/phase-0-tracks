@@ -1,0 +1,24 @@
+WORD GUESSING GAME PSEUDO CODE
+Kind of Wheel of Fortune or Hangman
+
+One user enters a string as a word/phrase
+
+The other user tries to figure out that word/phrase
+
+The number of guesses = The length of word/phrase
+	- Increment a counter for number of guesses
+
+Repeated guesses does not add to number of guesses
+	- Should store the guesses into an array
+	- Use a loop on the array to check if input is the same
+
+Continual feedback on the current state of the word/phrase
+	- After input, feedbacks to the user what happened
+	- If just a letter, feedback to user where the letter appears in word/phrase
+	- If more than just a letter, feedback to user whether word/phrase guess is correct
+
+Break the loop if word/phrase entered correctly
+User gets a YOU WIN! if guessed correctly
+
+Conditions of loop met so
+User gets a Better Luck Next Time LOSER! if no more guesses
