@@ -9,7 +9,6 @@
 
 
 
-
 puts "Please enter a word"
 word_input = gets.chomp
 array_word_input = word_input.split('')
@@ -29,14 +28,18 @@ while n < word_input.length
 		if array_of_guesses[i] == guess
 			puts "Already guessed that before!"
 			break
+		else
+			array_of_guesses.push(guess)
 		end
 		i += 1
 	end
 
-	array_of_guesses.push(guess)
-
 	if guess.length == 1
 		x = 0
+		if guess == word_input
+			puts "CONGRATZ! YOU'VE GUESSED CORRECTLY!"
+			break
+		end
 		while x < word_input.length
 			if array_word_input[x] == guess
 					feedback[x] = guess
@@ -45,14 +48,9 @@ while n < word_input.length
 		end
 		feedback.each {|letter| print "#{letter} "}
 		puts ""
-		y = 0
-		# while y < array_of_guesses.length
-		# 	if array_of_guesses[y] == guess
-		# 		break
-		# 	end
-		# 	y += 1
-		# end
-		n += 1
+		if array_of_guesses.include?(guess) == false
+			n += 1
+		end
 	elsif guess.length > 1
 		if guess == word_input
 			puts "CONGRATZ! YOU'VE GUESSED CORRECTLY!"
