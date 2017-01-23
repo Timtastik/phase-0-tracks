@@ -1,3 +1,6 @@
+# Must be the string of the file name in the directory
+require_relative 'todo_list'
+
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
