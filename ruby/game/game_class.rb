@@ -1,21 +1,22 @@
 class Game
 	attr_reader :array_word_input, :feedback, :guess_count, :array_of_guesses
 
-	def initialize
-		@array_of_guesses = []
-		@guess_count = 0
-	end
-
 	def relay_feedback()
+		print "Feedback: "
 		@feedback.each { |letter| print "#{letter} "}
+		puts ""
 	end
 
-	def winner()
+	def winner(word)
+		puts ""
 		puts "CONGRATZ! YOU'VE GUESSED CORRECTLY!"
+		print "The word was #{word}"
 	end
 
 	def loser()
-		
+		puts ""
+		puts "Reached maximum number of guesses!"
+		puts "BETTER LUCK NEXT TIME LOSER! >:D"
 	end
 
 	def word_to_array(string_word)
@@ -44,5 +45,18 @@ class Game
 
 	def guess_increment()
 		@guess_count += 1
+	end
+
+	def hide_word()
+		z = 0
+		while z < 60
+			puts ""
+			z += 1
+		end
+	end
+
+	def initialize()
+		@array_of_guesses = []
+		@guess_count = 0
 	end
 end

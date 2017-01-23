@@ -2,35 +2,39 @@ require_relative 'game_class'
 
 game = Game.new
 
-puts "Please enter a word"
+puts "FIRST USER. Please enter a word"
 word_input = gets.chomp
-# array_word_input = word_input.split('')
-game.word_to_array(word_input)
-# feedback = Array.new(word_input.length, "_")
-game.array_feedback(word_input)
-# array_of_guesses = []
 
+game.word_to_array(word_input)
+
+game.array_feedback(word_input)
+
+game.hide_word
+
+puts "SECOND USER. Time to Guess!"
 game.guess_count
 while game.guess_count < word_input.length
 
-	puts "Please enter guess"
+	print "Please enter guess: "
 	guess = gets.chomp
+	puts ""
 
-	i = 0
-	while i < array_of_guesses.length
+	i = -1
+	while i < game.array_of_guesses.length
 		if game.array_of_guesses[i] == guess
 			game.same_guess
 			break
 		else
 			game.new_guess(guess)
-			p game.array_of_guesses
+			game.guess_increment
+			break
 		end
 		i += 1
 	end
 
 	if guess.length == 1
 		if guess == word_input
-			game.winner
+			game.winner(word_input)
 			break
 		end
 		x = 0
@@ -42,25 +46,28 @@ while game.guess_count < word_input.length
 		end
 		game.relay_feedback
 		puts ""
-		if array_of_guesses.include?(guess) == false
-			game.guess_increment
-			p game.array_of_guesses
-		end
-
 	elsif guess.length > 1
 		if guess == word_input
-			game.winner
+			game.winner(word_input)
 			break
 		else
 			game.wrong_guess
 			game.relay_feedback
-			game.guess_increment
+			puts ""
 		end
-
 	else
 		game.invalid_input
 		game.guess_increment
 	end
+
+	if !game.feedback.include? "_"
+		game.winner(word_input)
+	elsif game.guess_count == word_input.length
+		game.loser
+	end
 end
 
-# puts "Sorry YOU LOSE!"
+# SIDENOTE TO SELF
+# Review code and refactor so more readable
+# Try using a phrase for word_input
+# Instead of one letter, put group of characters that will relay feedback
