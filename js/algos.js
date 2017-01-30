@@ -20,13 +20,14 @@ function longest_string(array_of_strings){
 	}; // for
 
 	return long_string;
-
 }; // function
 
 console.log(longest_string(strings));
 
 // If stumped, look through code very carefully at each thing!
 // The logic you may have, but syntax is key!
+
+// -----------------------
 
 // DO THE THING 2
 // PSEUDO CODE
@@ -48,8 +49,8 @@ function key_value_pair(object1, object2){
 	var object1_keys = Object.keys(object1);
 	var object2_keys = Object.keys(object2);
 	var bool = false;
-	// Does interloop then outerloop
 
+	// Does interloop then outerloop
 	for(var i = 0; i < object1_keys.length; i++){
 		for(var n = 0; n < object2_keys.length; n++){
 			if (object1[object1_keys[i]] == object2[object2_keys[n]]) {
@@ -68,6 +69,8 @@ console.log(key_value_pair(person1, person3));
 // console.log(person1.length);
 
 // SIDE NOTE: Maybe put a break in the loop of function? Redundant coding
+
+// ----------------------
 
 // DO THE THING 3
 // PSEUDO CODE
