@@ -96,20 +96,21 @@ function random_strings(integer){
 };
 
 // console.log(Math.floor(Math.random()*10)+1);
-console.log(random_strings(3));
-console.log(longest_string(random_strings(3)));
+var gen = random_strings(3);
+console.log(gen);
+console.log(longest_string(gen));
 
 // FINAL DRIVER CODE
 
-// console.log("LAST DRIVE CODE\n");
+console.log("LAST DRIVE CODE\n");
 
-// for(var x = 0; x < 10; x++){
-// 	console.log("TEST " + (x+1));
-// 	var random_integer = Math.floor(Math.random()*9)+1;
-// 	var generated_array = random_strings(random_integer);
-// 	console.log(random_strings(random_integer));
-// 	console.log(longest_string(generated_array));
-// };
+for(var x = 0; x < 10; x++){
+	console.log("TEST " + (x+1));
+	var random_integer = Math.floor(Math.random()*9)+1;
+	var generated_array = random_strings(random_integer);
+	console.log(generated_array);
+	console.log(longest_string(generated_array));
+};
 
 // SIDE NOTE
 // Remember Math.random is random numbers from 0 to 1 inclusive
