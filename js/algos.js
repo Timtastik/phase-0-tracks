@@ -87,14 +87,31 @@ function random_strings(integer){
 		var letter_count = Math.floor(Math.random()*10) + 1;
 		var jargon = "";
 		for(var n = 0; n < letter_count; n++){
-			jargon += abc[Math.floor(Math.random()*25)];
+			jargon += abc[Math.floor(Math.random()*26)];
 		};
 		gibberish_array.push(jargon);
 	};
 
 	return gibberish_array;
-
 };
 
 // console.log(Math.floor(Math.random()*10)+1);
 console.log(random_strings(3));
+console.log(longest_string(random_strings(3)));
+
+// FINAL DRIVER CODE
+
+// console.log("LAST DRIVE CODE\n");
+
+// for(var x = 0; x < 10; x++){
+// 	console.log("TEST " + (x+1));
+// 	var random_integer = Math.floor(Math.random()*9)+1;
+// 	var generated_array = random_strings(random_integer);
+// 	console.log(random_strings(random_integer));
+// 	console.log(longest_string(generated_array));
+// };
+
+// SIDE NOTE
+// Remember Math.random is random numbers from 0 to 1 inclusive
+// Inclusive Random Number example
+// -- Math.floor(Math.random()*(max - min + 1)) + min;
