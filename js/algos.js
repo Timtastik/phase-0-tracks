@@ -34,3 +34,20 @@ console.log(longest_string(strings));
 // Otherwise return false
 // Function should iterate through all the property values in the object
 // Problem in different property names, but same value?
+
+console.log("DO THE THING 2")
+
+var person1 = {name: "G Eazy", "ethnicity": "white", age: 22};
+var person2 = {nickname: "Eminem", rap_song: "Rap God", age: 22};
+var person3 = {"name": "Kehlani", attractive: true, "age": 20};
+
+function key_value_pair(object1, object2){
+	var object1_keys = Object.keys(object1);
+	var object2_keys = Object.keys(object2);
+
+	for(var i = 0; i < object1.length; i++){
+		if (object1[object1_keys[i]] == object2[object2_keys[i]]) {
+			return true;
+		};
+	};
+};
