@@ -6,6 +6,8 @@
 // Keep looping until checks all the strings of the array
 // Case if more than one string is the longest ?
 
+console.log("DO THE THING 1")
+
 var strings = ["long", "short", "something", "absolutely the longest one"];
 
 function longest_string(array_of_strings){
@@ -38,24 +40,32 @@ console.log(longest_string(strings));
 console.log("DO THE THING 2")
 
 var person1 = {name: "G Eazy", "ethnicity": "white", age: 22};
-var person2 = {nickname: "Eminem", rap_song: "Rap God", age: 22};
+var person2 = {nickname: "Eminem", ethnicity: "white", rap_song: "Rap God", age: 35};
 var person3 = {"name": "Kehlani", attractive: true, "age": 20};
 
 function key_value_pair(object1, object2){
+	// Makes an array for the keys
 	var object1_keys = Object.keys(object1);
 	var object2_keys = Object.keys(object2);
 	var bool = false;
 	// Does interloop then outerloop
-	for(var i = 0; i < object1.length; i++){
-		for(var n = 0; n < object2.length; n++){
+
+	for(var i = 0; i < object1_keys.length; i++){
+		for(var n = 0; n < object2_keys.length; n++){
 			if (object1[object1_keys[i]] == object2[object2_keys[n]]) {
 				var bool = true;
-			}; 
-		};
-	};
+			}; // if
+		}; // for object2
+	}; // for object1
 
-return bool;
-
+	return bool;
 };
 
 console.log(key_value_pair(person1, person2));
+console.log(key_value_pair(person1, person3));
+
+// Objects do not have a length?...... Wow... -_- ... Makes sense though
+// console.log(person1.length);
+
+// SIDE NOTE: Maybe put a break in the loop of function? Redundant coding
+
