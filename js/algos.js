@@ -14,7 +14,7 @@ function longest_string(array_of_strings){
 	for(var i = 0; i < array_of_strings.length; i++){
 		if(long_string.length < array_of_strings[i].length) {
 			long_string = array_of_strings[i];
-		}; // if
+		} // if
 	}; // for
 
 	return long_string;
@@ -44,10 +44,18 @@ var person3 = {"name": "Kehlani", attractive: true, "age": 20};
 function key_value_pair(object1, object2){
 	var object1_keys = Object.keys(object1);
 	var object2_keys = Object.keys(object2);
-
+	var bool = false;
+	// Does interloop then outerloop
 	for(var i = 0; i < object1.length; i++){
-		if (object1[object1_keys[i]] == object2[object2_keys[i]]) {
-			return true;
+		for(var n = 0; n < object2.length; n++){
+			if (object1[object1_keys[i]] == object2[object2_keys[n]]) {
+				var bool = true;
+			}; 
 		};
 	};
+
+return bool;
+
 };
+
+console.log(key_value_pair(person1, person2));
