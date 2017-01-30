@@ -25,3 +25,12 @@ console.log(longest_string(strings));
 
 // If stumped, look through code very carefully at each thing!
 // The logic you may have, but syntax is key!
+
+// DO THE THING 2
+// PSEUDO CODE
+// Have 3 different objects with many key-value pairs to run the function
+// Make a function that compares key-value of the objects
+// If one instance where key-value shares the same value then return true
+// Otherwise return false
+// Function should iterate through all the property values in the object
+// Problem in different property names, but same value?
