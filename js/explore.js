@@ -8,16 +8,22 @@ PSUEDO CODE
 */
 
 function reverse_string(input_string){
-	var backwards_string = "";
 
+	var backwards_string = "";
+	// Instead of incrementing by adding, increment by going from max length til 0
 	for (var i = input_string.length - 1; i >= 0; i--) {
-		backwards_string += input_string[i]
+		backwards_string += input_string[i];
 	};
 
-	return backwards_string
+	return backwards_string;
 
 };
 
 // DRIVER TEST CODE
 
-console.log(reverse_string("hello"));
+if (reverse_string("stressed") == "desserts") {
+	console.log(reverse_string("hello"));
+};
+
+// SIDE NOTE TO SELF
+// Always remember to put the ;;;;;;;;;;;;;;;;;;;
