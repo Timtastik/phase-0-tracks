@@ -69,3 +69,32 @@ console.log(key_value_pair(person1, person3));
 
 // SIDE NOTE: Maybe put a break in the loop of function? Redundant coding
 
+// DO THE THING 3
+// PSEUDO CODE
+// Function that takes an integer and spits out an array of random
+// - strings of that integer length
+// The strings are random words between 1 letter to 10 letters
+// Creating the random words is the more intense code...
+
+console.log("DO THE THING 3");
+
+function random_strings(integer){
+
+	var gibberish_array = [];
+	var abc = "abcdefghijklmnopqrstuvwxyz";
+
+	for(var i = 0; i < integer; i++){
+		var letter_count = Math.floor(Math.random()*10) + 1;
+		var jargon = "";
+		for(var n = 0; n < letter_count; n++){
+			jargon += abc[Math.floor(Math.random()*25)];
+		};
+		gibberish_array.push(jargon);
+	};
+
+	return gibberish_array;
+
+};
+
+// console.log(Math.floor(Math.random()*10)+1);
+console.log(random_strings(3));
