@@ -1,0 +1,47 @@
+USING .dump and other commands!
+
+BEGIN TRANSACTION;
+CREATE TABLE businesses (
+id INTEGER PRIMARY KEY,
+name VARCHAR(50)
+);
+INSERT INTO "businesses" VALUES(1,'Grundy Hollow Wedding Chapel');
+INSERT INTO "businesses" VALUES(2,'Amir''s Towing');
+INSERT INTO "businesses" VALUES(3,'The Beagle Nightclub');
+INSERT INTO "businesses" VALUES(4,'Lotus Yoga');
+INSERT INTO "businesses" VALUES(5,'Plumbing by Janet');
+INSERT INTO "businesses" VALUES(6,'Sushi World');
+INSERT INTO "businesses" VALUES(7,'JoeBob''s Sportz Barn');
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(30),
+last_name VARCHAR(30)
+);
+INSERT INTO "users" VALUES(1,'Bradford','Pitt');
+INSERT INTO "users" VALUES(2,'Mandy','Kaling');
+INSERT INTO "users" VALUES(3,'Angela','Jolie');
+INSERT INTO "users" VALUES(4,'Steven','Wonder');
+INSERT INTO "users" VALUES(5,'Holly','Berry');
+INSERT INTO "users" VALUES(6,'Merryl','Streepman');
+INSERT INTO "users" VALUES(7,'Deryl','George');
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+INSERT INTO "reviews" VALUES(1,5,'Ceviche',6,4);
+INSERT INTO "reviews" VALUES(2,1,'THEY TOWED MY CAR FOR OVERPRICE AND IDK WHY',2,7);
+INSERT INTO "reviews" VALUES(3,3,'TORE MY ACL WHILE IN CLASS BUT IT WAS FUN... NOT REALLY',4,1);
+COMMIT;
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> FROM reviews
+   ...> JOIN users ON user_id = users.id
+   ...> JOIN businesses ON business_id = businesses.id;
+Steven|Wonder|Sushi World|5|Ceviche
+Deryl|George|Amir's Towing|1|THEY TOWED MY CAR FOR OVERPRICE AND IDK WHY
+Bradford|Pitt|Lotus Yoga|3|TORE MY ACL WHILE IN CLASS BUT IT WAS FUN... NOT REALLY
