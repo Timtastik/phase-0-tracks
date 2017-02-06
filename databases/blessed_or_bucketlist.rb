@@ -1,5 +1,21 @@
 require 'sqlite3'
 
+def add_to_blessings(db, comment)
+	db.execute("INSERT INTO blessings (comment) VALUES (?)", [comment])
+end
+
+def add_to_buckets(db, comment)
+	db.execute("INSERT INTO buckets (comment) VALUES (?)", [comment])
+end
+
+def update_blessings(db, new_comment, where_id)
+	db.execute("UPDATE blessings SET comment='#{new_comment}' WHERE id='where_id'")
+end
+
+def update_buckets(db, new_comment, where_id)
+	db.execute("UPDATE buckets SET comment='#{new_comment}' WHERE id='where_id'")
+end
+
 puts "To access your Blessed and Buckets database"
 puts "Please enter your username!"
 puts "If you do not have a username this is also the time to create one"
