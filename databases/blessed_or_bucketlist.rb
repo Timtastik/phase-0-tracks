@@ -8,8 +8,8 @@ require 'sqlite3'
 # 	db.execute("INSERT INTO buckets (comment) VALUES (?)", [comment])
 # end
 
-def add_to_table(db, table, comment)
-	db.execute("INSERT INTO #{table} (comment) VALUES (?)", [comment])
+def add_to_table(db, table, column, comment)
+	db.execute("INSERT INTO #{table} (#{column}) VALUES (?)", [comment])
 end
 
 # def update_blessings(db, new_comment, where_id)
@@ -20,8 +20,8 @@ end
 # 	db.execute("UPDATE buckets SET comment='#{new_comment}' WHERE id='where_id'")
 # end
 
-def update(db, table, new_comment, where_id)
-	db.execute("UPDATE #{table} SET comment='#{new_comment}' WHERE id='where_id'")
+def update(db, table, column, new_comment, where_id)
+	db.execute("UPDATE #{table} SET #{column}='#{new_comment}' WHERE id='where_id'")
 end
 
 puts "To access your Blessed and Buckets database"
