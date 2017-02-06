@@ -154,7 +154,7 @@ while user_input != 'DONE'
 
 			update_buckets(database, table_wanted, comment, identifier)
 		end
-		
+
 	elsif user_input == "VIEW"
 		puts "Which table would you like to view?"
 		puts "Your bucket list[1], blessings list[2], or both[3]?"
@@ -170,3 +170,8 @@ while user_input != 'DONE'
 		end
 	end
 end
+
+# SIDE NOTE TO SELF
+# Better way to view the data?
+# Is there a way to transfer one data from a table to a different table?
+# Program works, but it isn't super user friendly
