@@ -19,20 +19,12 @@ def add_to_buckets(db, comment, rating)
 	db.execute("INSERT INTO buckets (bucket, stars) VALUES (?, ?)", [comment, rating])
 end
 
-# def update_blessings(db, new_comment, where_id)
-# 	db.execute("UPDATE blessings SET comment='#{new_comment}' WHERE id='where_id'")
-# end
-
-# def update_buckets(db, new_comment, where_id)
-# 	db.execute("UPDATE buckets SET comment='#{new_comment}' WHERE id='where_id'")
-# end
+def update_blessings(db, table, new_comment, where_id)
+	db.execute("UPDATE #{table} SET bless='#{new_comment}' WHERE id='where_id'")
+end
 
 def update_buckets(db, table, new_comment, where_id)
 	db.execute("UPDATE #{table} SET bucket='#{new_comment}' WHERE id='where_id'")
-end
-
-def update_blessings(db, table, new_comment, where_id)
-	db.execute("UPDATE #{table} SET bless='#{new_comment}' WHERE id='where_id'")
 end
 
 def view_blessings(db)
@@ -74,6 +66,7 @@ def menu
 	puts "  or you're 'DONE' here?"
 end
 
+# DRIVER CODE -----------------------------------------
 puts "This is the Blessings and Buckets program"
 puts "Please enter your username or create a new one!"
 username = gets.chomp
@@ -110,7 +103,6 @@ database.execute(create_user_table)
 database.execute(create_blessings_table)
 database.execute(create_bucket_list_table)
 
-# view_both(database)
 
 user_input = ""
 while user_input != 'DONE'
@@ -162,6 +154,7 @@ while user_input != 'DONE'
 
 			update_buckets(database, table_wanted, comment, identifier)
 		end
+		
 	elsif user_input == "VIEW"
 		puts "Which table would you like to view?"
 		puts "Your bucket list[1], blessings list[2], or both[3]?"
@@ -175,7 +168,5 @@ while user_input != 'DONE'
 		elsif table_wanted == 3
 			view_both(database)
 		end
-	elsif user_input == "DELETE"
-
 	end
 end
