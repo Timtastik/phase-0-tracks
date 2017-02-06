@@ -26,8 +26,23 @@ def update(db, table, column, new_comment, where_id)
 	db.execute("UPDATE #{table} SET #{column}='#{new_comment}' WHERE id='where_id'")
 end
 
-def view_blessings(db,)
-	db.execute("SELECT * FROM blessings")
+def view_blessings(db)
+	db.execute("SELECT bless, stars FROM blessings")
+end
+
+def view_buckets(db)
+	db.execute("SELECT bucket, stars FROM buckets")
+end
+
+def view_both(db)
+	viewing_both_tables = <<-SQL
+		SELECT blessings.stars, blessings.bless, buckets.bucket, buckets.stars
+		FROM user
+		INNER JOIN blessings ON user.blessings_id = blessings.id
+		INNER JOIN buckets ON user.buckets_id = buckets.id
+	SQL
+
+	db.execute(viewing_both_tables)
 end
 
 puts "To access your Blessed and Buckets database"
@@ -56,7 +71,7 @@ SQL
 create_blessings_table = <<-SQL
 	CREATE TABLE blessings(
 		id INTEGER PRIMARY KEY,
-		comment VARCHAR(255),
+		bless VARCHAR(255),
 		date_entered DATE,
 		stars INT
 		);
@@ -65,7 +80,7 @@ SQL
 create_bucket_list_table = <<-SQL
 	CREATE TABLE buckets(
 		id INTEGER PRIMARY KEY,
-		comment VARCHAR(255)
+		bucket VARCHAR(255)
 		date_entered DATE,
 		stars INT
 		);
