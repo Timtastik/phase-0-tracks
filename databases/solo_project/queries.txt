@@ -1,0 +1,230 @@
+$ sqlite3 my_library
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE books (
+   ...> id INTEGER PRIMARY KEY,
+   ...> title VARCHAR(50),
+   ...> author_id INT,
+   ...> published INT,
+   ...> FOREIGN KEY (author_id) REFERENCES authors(id)
+   ...> ;
+Error: near ";": syntax error
+sqlite> );
+Error: near ")": syntax error
+sqlite> .tables
+sqlite> CREATE TABLE books (
+   ...> id INTEGER PRIMARY KEY,
+   ...> title VAARCHAR(50),
+   ...> author_id INT,
+   ...> published INT,
+   ...> FOREIGN KEY (author_id) REFERENCES authors(id)
+   ...> );
+sqlite> .tables
+books
+sqlite> CREATE TABLE authors (
+   ...> id INTEGER PRIMARY KEY,
+   ...> ;
+Error: near ";": syntax error
+sqlite> insert into books (title) values ('awesome test');
+sqlite> select * from books;
+1|awesome test||
+sqlite> DROP INDEX title ON books;
+Error: near "ON": syntax error
+sqlite> DROP INDEX title;
+Error: no such index: title
+sqlite> alter table books drop column title
+   ...> ;
+Error: near "drop": syntax error
+sqlite> alter table books
+   ...> alter column title VARCHAR(50)
+   ...> ;
+Error: near "alter": syntax error
+sqlite> alter table books
+   ...> modify column books VARCHAR(50);
+Error: near "modify": syntax error
+sqlite> alter table books
+   ...> modify title VARCHAR(50);
+Error: near "modify": syntax error
+sqlite> DROP TABLE books
+   ...> ;
+sqlite> .tables
+sqlite> CREATE TABLE books (
+   ...> id INTEGER PRIMARY KEY,
+   ...> title VARCHAR(50),
+   ...> author_id INT,
+   ...> published INT,
+   ...> FOREIGN KEY (author_id) REFERENCES authors(id)
+   ...> );
+sqlite> .tables
+books
+sqlite> CREATE TABLE authors (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(50)
+   ...> ;
+Error: near ";": syntax error
+sqlite> CREATE TABLE authors (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(50),
+   ...> );
+Error: near ")": syntax error
+sqlite> CREATE TABLE authors (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(50)
+   ...> );
+sqlite> insert into authors (name) values ('F. Scott Fitzgerald');
+sqlite> insert into authors (name) values ('Malcolm Gladwell');
+sqlite> insert into authors (name) values ('Dan Lyons');
+sqlite> select * from authors;
+1|F. Scott Fitzgerald
+2|Malcolm Gladwell
+3|Dan Lyons
+sqlite> select * from books;
+sqlite> insert into books (title, author_id, published) values ('Disrupted', 3, 2016);
+sqlite> select * from books;
+1|Disrupted|3|2016
+sqlite> select books.title from books;
+Disrupted
+sqlite> insert into books (title, author_id, published) values ('Outliers' 2, 2011);
+Error: near "2": syntax error
+sqlite> insert into books (title, author_id, published) values ('Outliers', 2, 2011);
+sqlite> insert into books (title, author_id, published) values (''The Tipping Point', 2, 2002);
+   ...> ';
+Error: near "The": syntax error
+sqlite> insert into books (title, author_id, published) values ('The Tipping Point', 2, 2002);
+sqlite> insert into books (title, author_id, published) values ('The Great Gatsby', 1, 2004);
+sqlite> select * from books;
+1|Disrupted|3|2016
+2|Outliers|2|2011
+3|The Tipping Point|2|2002
+4|The Great Gatsby|1|2004
+sqlite> insert into authors (name) values ('Gayle Forman');
+sqlite> select * from authors;
+1|F. Scott Fitzgerald
+2|Malcolm Gladwell
+3|Dan Lyons
+4|Gayle Forman
+sqlite> insert into books (title, author_id, published) values ('If I Stay', 4, 2010);
+sqlite> insert into authors (name) values ('Ned Vizzini');
+sqlite> select * from authors;
+1|F. Scott Fitzgerald
+2|Malcolm Gladwell
+3|Dan Lyons
+4|Gayle Forman
+5|Ned Vizzini
+sqlite> insert into books (title, author_id, published) values ('Be More Chill', 5, 2005);
+sqlite> insert into authors (name) values ('E L James');
+sqlite> insert into books (title, author_id, published) values ('Grey', 6, 2015);
+sqlite> select * from books;
+1|Disrupted|3|2016
+2|Outliers|2|2011
+3|The Tipping Point|2|2002
+4|The Great Gatsby|1|2004
+5|If I Stay|4|2010
+6|Be More Chill|5|2005
+7|Grey|6|2015
+sqlite> select * from authors;
+1|F. Scott Fitzgerald
+2|Malcolm Gladwell
+3|Dan Lyons
+4|Gayle Forman
+5|Ned Vizzini
+6|E L James
+sqlite> insert into books (title, author_id, published) values ('Fifty Shades of Grey', 6, 2012);
+sqlite> select * from books;
+1|Disrupted|3|2016
+2|Outliers|2|2011
+3|The Tipping Point|2|2002
+4|The Great Gatsby|1|2004
+5|If I Stay|4|2010
+6|Be More Chill|5|2005
+7|Grey|6|2015
+8|Fifty Shades of Grey|6|2012
+sqlite> select books.title, authors.name from books join authors on author_id = authors.name;
+sqlite> select books.title, authors.name from books join authors on books.author_id = authors.name;
+sqlite> select books.title, authors.name from books join authors on books.author_id = authors.id;
+Disrupted|Dan Lyons
+Outliers|Malcolm Gladwell
+The Tipping Point|Malcolm Gladwell
+The Great Gatsby|F. Scott Fitzgerald
+If I Stay|Gayle Forman
+Be More Chill|Ned Vizzini
+Grey|E L James
+Fifty Shades of Grey|E L James
+sqlite> .dump
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE books (
+id INTEGER PRIMARY KEY,
+title VARCHAR(50),
+author_id INT,
+published INT,
+FOREIGN KEY (author_id) REFERENCES authors(id)
+);
+INSERT INTO "books" VALUES(1,'Disrupted',3,2016);
+INSERT INTO "books" VALUES(2,'Outliers',2,2011);
+INSERT INTO "books" VALUES(3,'The Tipping Point',2,2002);
+INSERT INTO "books" VALUES(4,'The Great Gatsby',1,2004);
+INSERT INTO "books" VALUES(5,'If I Stay',4,2010);
+INSERT INTO "books" VALUES(6,'Be More Chill',5,2005);
+INSERT INTO "books" VALUES(7,'Grey',6,2015);
+INSERT INTO "books" VALUES(8,'Fifty Shades of Grey',6,2012);
+CREATE TABLE authors (
+id INTEGER PRIMARY KEY,
+name VARCHAR(50)
+);
+INSERT INTO "authors" VALUES(1,'F. Scott Fitzgerald');
+INSERT INTO "authors" VALUES(2,'Malcolm Gladwell');
+INSERT INTO "authors" VALUES(3,'Dan Lyons');
+INSERT INTO "authors" VALUES(4,'Gayle Forman');
+INSERT INTO "authors" VALUES(5,'Ned Vizzini');
+INSERT INTO "authors" VALUES(6,'E L James');
+COMMIT;
+sqlite>
+sqlite> select books.title, authors.name, books.published from books join authors on books.author_id = authors.id;
+Disrupted|Dan Lyons|2016
+Outliers|Malcolm Gladwell|2011
+The Tipping Point|Malcolm Gladwell|2002
+The Great Gatsby|F. Scott Fitzgerald|2004
+If I Stay|Gayle Forman|2010
+Be More Chill|Ned Vizzini|2005
+Grey|E L James|2015
+Fifty Shades of Grey|E L James|2012
+
+BEGIN TRANSACTION;
+CREATE TABLE roles (
+id INTEGER PRIMARY KEY,
+position VARCHAR(10)
+);
+INSERT INTO "roles" VALUES(1,'TOP');
+INSERT INTO "roles" VALUES(2,'JUNGLE');
+INSERT INTO "roles" VALUES(3,'MID');
+INSERT INTO "roles" VALUES(4,'BOTTOM');
+INSERT INTO "roles" VALUES(5,'SUPPORT');
+CREATE TABLE teams (
+id INTEGER PRIMARY KEY,
+name VARCHAR(50)
+);
+INSERT INTO "teams" VALUES(1,'SK Telecom T1');
+INSERT INTO "teams" VALUES(2,'Team SoloMid');
+INSERT INTO "teams" VALUES(3,'Counter Logic Gaming');
+CREATE TABLE players (
+id INTEGER PRIMARY KEY,
+IGN varchar(30),
+role_id INT,
+team_id INT, name varchar(50),
+FOREIGN KEY (role_id) REFERENCES roles(id),
+FOREIGN KEY (team_id) REFERENCES teams(id)
+);
+INSERT INTO "players" VALUES(1,'Bjergsen',3,2,'Soren Bjerg');
+INSERT INTO "players" VALUES(2,'WildTurtle',4,2,'Jason Tran');
+INSERT INTO "players" VALUES(3,'Hauntzer',1,2,'Kevin Yarnel');
+INSERT INTO "players" VALUES(4,'Svenskeren',2,2,'Dennis Johnsen');
+INSERT INTO "players" VALUES(5,'Biofrost',5,2,'Vincent Wang');
+INSERT INTO "players" VALUES(6,'Huni',1,1,'Heo Seung-hoon');
+INSERT INTO "players" VALUES(7,'Peanut',2,1,'Han Wang-ho');
+INSERT INTO "players" VALUES(8,'Faker',3,1,'Lee Sang-hyeok');
+INSERT INTO "players" VALUES(9,'Bang',4,1,'Bae Jun-sik');
+INSERT INTO "players" VALUES(10,'Wolf',5,1,'Lee Jae-wan');
+INSERT INTO "players" VALUES(11,'Aphromoo',5,3,'Zaqueri Black');
+COMMIT;
+DELETE FROM players WHERE id=12;
