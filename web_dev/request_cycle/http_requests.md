@@ -1,7 +1,7 @@
 # Http Requests
 
 ##What are some common HTTP status codes?
-Status codes define how the server handled the transaction.
+*Status codes define how the server handled the transaction.*
 
 **200 OK:**
 Succeeded. The resource of information has been returned.
@@ -49,9 +49,31 @@ At the time, your web server is unable to handle your HTTP request. This is usua
 The server is stating the account you have currently logged in as does not have permission to perform the action you are attempting.
 
 Here are the references:
-[w3 org](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10)
-[smartlabsoftware](https://www.smartlabsoftware.com/ref/http-status-codes.htm)
-[wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+1. [w3 org](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10)
+2. [smartlabsoftware](https://www.smartlabsoftware.com/ref/http-status-codes.htm)
+3. [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 ----
+
+##What is the difference between a GET request and a POST request? When might each be used?
+*something*
+
+**GET**
+* Parameters in URL
+* Used for fetching documents
+* Maximum URL length
+* Ok to Cache
+* Should not change the server
+* Include all required data in the Universal Resource Location (URL)
+* ASCII format only
+
+**POST**
+* Parameters in body
+* Used for updating data
+* No max length
+* Not ok to cache
+* Ok to change the server
+* Binary data, images, and other files can be used
+
+References: [diffen](http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
 
