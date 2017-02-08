@@ -1,6 +1,6 @@
 # Http Requests
 
-What are some common HTTP status codes?
+##What are some common HTTP status codes?
 Status codes define how the server handled the transaction.
 
 **200 OK:**
@@ -47,3 +47,11 @@ At the time, your web server is unable to handle your HTTP request. This is usua
 
 **550 Permission Denied:**
 The server is stating the account you have currently logged in as does not have permission to perform the action you are attempting.
+
+Here are the references:
+[w3 org](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10)
+[smartlabsoftware](https://www.smartlabsoftware.com/ref/http-status-codes.htm)
+[wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
+----
+
