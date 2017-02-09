@@ -56,24 +56,31 @@ Here are the references:
 ----
 
 ##What is the difference between a GET request and a POST request? When might each be used?
-*something*
 
 **GET**
 * Parameters in URL
 * Used for fetching documents
-* Maximum URL length
+* Maximum URL length (has length restrictions)
 * Ok to Cache
 * Should not change the server
 * Include all required data in the Universal Resource Location (URL)
 * ASCII format only
+* Requests data from a specified resource
+* Should be used only to retrive data
+* Remain in the browser history
+* Can be bookmarked
+* Should not be used for sensitive data
 
 **POST**
 * Parameters in body
 * Used for updating data
 * No max length
-* Not ok to cache
+* Not ok to cache (never cached)
 * Ok to change the server
 * Binary data, images, and other files can be used
+* Submits data to be processed to a specified resource
 
-References: [diffen](http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
+References: 
+1. [diffen](http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
+2. [w3schools](http://www.w3schools.com/Tags/ref_httpmethods.asp)
 
