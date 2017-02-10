@@ -1,10 +1,8 @@
-
-
-function hovering(){
+function hover(){
 	event.target.style.backgroundColor="blue";
 };
 
-function out(){
+function hover_out(){
 	event.target.style.backgroundColor="white";
 };
 
@@ -16,15 +14,12 @@ function smaller(){
 	event.target.style.fontSize=".5em";
 };
 
-
-
-var timtom = document.getElementById("timtom");
+var tom_header = document.getElementById("tom");
 var dudes = document.getElementById("guys");
 var stored = document.getElementById("secondhalf");
-var parent = document.getElementsByTagName("ol").parentNode;
 
-dudes.addEventListener("mouseover", hovering);
-dudes.addEventListener("mouseout", out);
+tom_header.addEventListener("mouseover", hovering);
+tom_header.addEventListener("mouseout", out);
 timtom.addEventListener("resize", resizing);
 stored.addEventListener("click", smaller);
 parent.addEventListener("mouseover", hovering);
