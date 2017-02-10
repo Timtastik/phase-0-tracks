@@ -7,6 +7,8 @@ jQuery is a JavaScript file that you include in your pages. It lets you find ele
 This checks if the DOM tree has been created then executes the script.
     $(document).ready(function(){});
 
+    $(selector).action()
+
 Events are the browser's way of indicating when something has happened (such as when a page has finished loadaing or a button has been clicked).
 
 Binding is the process of stating which event you are waiting to happen, and which element you are waiting for that event to happen upon.
