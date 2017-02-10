@@ -64,3 +64,14 @@ get '/add/:numb1/:numb2' do
   result = numb1 + numb2
   "#{params[:numb1]} + #{params[:numb2]} = #{result.to_s}"
 end
+
+# Must use the route parameter same as the data in the campus column
+get '/search/:campus' do
+  campus = db.execute("SELECT name FROM students WHERE campus=?", [params[:campus]])
+  campus.to_s
+  respond = ""
+  campus.each do |camp|
+    respond << "#{camp['name']} <br>"
+  end
+  respond
+end
