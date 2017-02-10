@@ -80,7 +80,13 @@ Here are the references:
 * Binary data, images, and other files can be used
 * Submits data to be processed to a specified resource
 
+##What is a cookie?
+"An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser, that may store it and send it back together with the next request to the same server. Typically, it's used to know if two requests came from the same browser allowing to keep a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol." -Quoted from Develop Mozilla
+
+"Cookies are usually small text files, given ID tags that are stored on your computer's browser directory or program data subfolders. Cookies are created when you use your browser to visit a website that uses cookies to keep track of your movements within the site, help you resume where you left off, remember your registered login, theme selection, preferences, and other customization functions.The website stores a corresponding file(with same ID tag)to the one they set in your browser and in this file they can track and keep information on your movements within the site and any information you may have voluntarily given while visiting the website, such as email address." - Quoted by allaboutcookies
+
 References: 
 1. [diffen](http://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)
 2. [w3schools](http://www.w3schools.com/Tags/ref_httpmethods.asp)
-
+3. [develop.mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+4. [allaboutcookies](http://www.allaboutcookies.org/cookies/)
