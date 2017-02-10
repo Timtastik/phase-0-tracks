@@ -31,3 +31,11 @@ Differences from Anatomy of Shared Hosting and VPS Hosting:
 
 References:
 1. [webhostingsecretreveal](http://www.webhostingsecretrevealed.net/vps-hosting-guide/)
+
+----
+
+##Why is it considered a bad idea to run programs as the root user on a Linux system?
+* Think of the root user as the administrator of that VPS, it has full access to everything on that server, which can delete everything or modify everything to be different. This makes the server more prone to mistakes or software bugs.
+
+References:
+1. [unix.stackexchange](http://unix.stackexchange.com/questions/52268/why-is-it-a-bad-idea-to-run-as-root)
