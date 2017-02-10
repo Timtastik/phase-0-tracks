@@ -48,3 +48,12 @@ end
 get '/contact' do
   "410 S Michigan Ave, Chicago, IL"
 end
+
+# Use /great_job?name=examplename to make the code work!
+get '/great_job' do
+  if params[:name] != nil
+    "Good job, #{params[:name]}"
+  else
+    "Good job!"
+  end
+end
