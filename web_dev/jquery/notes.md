@@ -1,5 +1,7 @@
 #Notes on jQuery
 
+"WRITE LESS, DO MORE"
+
 jQuery is a JavaScript file that you include in your pages. It lets you find elements using CSS-style selectors and then do something with the element using jQuery methods.
 
 This checks if the DOM tree has been created then executes the script.
