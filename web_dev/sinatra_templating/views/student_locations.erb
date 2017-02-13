@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Student Location Counter</h1>
+  <p>This page shows the number of DBC students at each location:</p>
+  <ul>
+  <% @students_loc.each do |location| %>
+    <li><%= location['campus'] %> = <%= location['COUNT(name)'] %></li>
+  <% end %>
+  </ul>
+</body>
+</html>
