@@ -3,11 +3,13 @@ $(document).ready(function(){
 		$("h1").fadeOut("slow");
 		$("h1").fadeIn("slow");
 
-		$("#feedback").animate({
-			left: '100px'
-		});
-		$("#feedback").animate({
+		$("#block").animate({
 			right: '100px'
 		});
+		$("#block").animate({
+			left: '100px'
+		});
+
+		$("#hideandseek").slideUp(3000).slideDown(2000);
 	}); // $button
 });
