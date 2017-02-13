@@ -44,3 +44,34 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/contact' do
+  "410 S Michigan Ave, Chicago, IL"
+end
+
+# Use /great_job?name=examplename to make the code work!
+get '/great_job' do
+  if params[:name] != nil
+    "Good job, #{params[:name]}"
+  else
+    "Good job!"
+  end
+end
+
+get '/add/:numb1/:numb2' do
+  numb1 = params[:numb1].to_i
+  numb2 = params[:numb2].to_i
+  result = numb1 + numb2
+  "#{params[:numb1]} + #{params[:numb2]} = #{result.to_s}"
+end
+
+# Must use the route parameter same as the data in the campus column
+get '/search/:campus' do
+  campus = db.execute("SELECT name FROM students WHERE campus=?", [params[:campus]])
+  campus.to_s
+  respond = ""
+  campus.each do |camp|
+    respond << "#{camp['name']} <br>"
+  end
+  respond
+end
